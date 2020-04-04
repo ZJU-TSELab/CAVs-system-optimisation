@@ -15,3 +15,4 @@ Third, move files "CAV_algorithm_zkh_modified-202004.py" and "read_output.py" an
 
 Fourth, change the directory in the file "boot_externally.py", near the vicinity lines of line 8.
 
+Finally, double click file "boot_externally.py" and the simulation may start automatically. The results will be saved in the folder "Results".
