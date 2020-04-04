@@ -141,4 +141,11 @@ try:
 except Exception as e:
     log_in_file(e)
 
-#plt.ioff()
+plt.ioff()
+plt.close()
+
+try:
+    os.remove(r'C:\Users\Kaihang Zhang\Desktop\Vissim_Projects\Intersection\total_pos_profile.csv')
+    os.remove(r'C:\Users\Kaihang Zhang\Desktop\Vissim_Projects\Intersection\total_speed_profile.csv')
+except Exception as e:
+    log_in_file(str(e))

@@ -9,13 +9,13 @@ Vissim.LoadNet(r'C:\\Users\\Kaihang Zhang\\Desktop\\Vissim_Projects\\Intersectio
 
 result_dir = r'C:\Users\Kaihang Zhang\Desktop\Vissim_Projects\Intersection\Results\\'
 
-ScriptFile_KZ = r'C:\Users\Kaihang Zhang\Desktop\Vissim_Projects\Intersection\vissim_scripts\CAV_algorithm_zkh_modified-2020.py'
+ScriptFile_KZ = r'C:\Users\Kaihang Zhang\Desktop\Vissim_Projects\Intersection\vissim_scripts\CAV_algorithm_zkh_modified-202004.py'
 ScriptFile_SH = r'C:\Users\Kaihang Zhang\Desktop\Vissim_Projects\Intersection\CAV_algorithm.py'
 ReadOutputFile = r'C:\Users\Kaihang Zhang\Desktop\Vissim_Projects\Intersection\vissim_scripts\read_output.py'
 
 
 def log_in_file(content):
-    logging.basicConfig(filename='VisSim.log', level=logging.DEBUG, format='%(asctime)s - %(message)s')
+    logging.basicConfig(filename='Test.log', level=logging.DEBUG, format='%(asctime)s - %(message)s')
     logging.debug(content)
 
 
@@ -43,10 +43,10 @@ def get_No():
     return max(No)
 
 
-SimPeriod = 600
-Simulation_Steps = [1.0]  # second
-Volumes = [600]
-Random_Seeds = [42]
+SimPeriod = 900 # seconds
+Simulation_Steps = [1.0]  # second, time interval to update the desired speed.
+Volumes = [600, 900, 1200]
+Random_Seeds = [42,142,242,342,442,542,642,742,842,942]
 
 ScriptFiles1 = [[ScriptFile_KZ], [ScriptFile_KZ], [ReadOutputFile]]
 ScriptFiles2 = [[ScriptFile_SH], [ScriptFile_SH], [ReadOutputFile]]
@@ -58,7 +58,7 @@ for Volume in Volumes:
     for VehComp in [1, 2]:
         for Random_Seed in Random_Seeds:
             for Simulation_Step in Simulation_Steps:
-                period = Simulation_Step/(1.0/Vissim.Simulation.AttValue('SimRes'))
+                period = Simulation_Step*Vissim.Simulation.AttValue('SimRes') # time*frequency (resolution)
                 t1 = time.time()
                 run(ScriptFiles1, Volume, VehComp, Random_Seed, SimPeriod, period)
                 t2 = time.time()
@@ -69,7 +69,7 @@ for Volume in Volumes:
     VehComp = 2
     for Random_Seed in Random_Seeds:
         for Simulation_Step in Simulation_Steps:
-            period = Simulation_Step/(1.0/Vissim.Simulation.AttValue('SimRes'))
+            period = Simulation_Step*Vissim.Simulation.AttValue('SimRes')
             t1 = time.time()
             run(ScriptFiles2, Volume, VehComp, Random_Seed, SimPeriod, period)
             t2 = time.time()
