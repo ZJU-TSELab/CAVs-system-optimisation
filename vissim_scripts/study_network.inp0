@@ -3299,7 +3299,7 @@
 			</label>
 		</signalHead>
 	</signalHeads>
-	<simulation comment="" numCores="1" numRuns="1" randSeed="42" randSeedIncr="1" retroSync="false" simMode="MICRO" simPeriod="600" simRes="5" simSpeed="1000" startTm="0" useAllCores="true" useMaxSimSpeed="true" volumeIncrDynAssign="0"/>
+	<simulation comment="" numCores="1" numRuns="1" randSeed="42" randSeedIncr="1" retroSync="false" simMode="MICRO" simPeriod="300" simRes="5" simSpeed="1000" startTm="0" useAllCores="true" useMaxSimSpeed="true" volumeIncrDynAssign="0"/>
 	<timeDistributions>
 		<timeDistribution mean="0.5" name="0.5 s" no="1" stdDev="0" type="NORMAL"/>
 		<timeDistribution mean="0.9" name="0.9 s" no="2" stdDev="0" type="NORMAL"/>
@@ -3377,6 +3377,8 @@
 		<userDefinedAttribute canBeEmpty="true" comment="A minmum speed for vehicles. No speeds lower than this value are assigned to vehicles.  Because of this minimum speed, vehicles might arrive at red." dataSrcType="DATA" dataType="SPEED" decimals="2" formula="" internalDefValueNum="5" internalDefValueStr="" internalMaxValue="INF" internalMinValue="-INF" maxStrLen="100" nameLong="minSpeed" nameShort="minSpeed" no="10" objType="SCRIPT" subAttrs=""/>
 		<userDefinedAttribute canBeEmpty="true" comment="When this attribute is True, the vehicles of this vehicle type are able to receive the signal information from the downstream signal head and adjust the speed." dataSrcType="DATA" dataType="BOOL" decimals="2" formula="" internalDefValueStr="" internalMaxValue="INF" internalMinValue="-INF" maxStrLen="100" nameLong="ReceiveSignalInformation" nameShort="ReceiveSignalInformation" no="11" objType="VEHICLETYPE" subAttrs=""/>
 		<userDefinedAttribute canBeEmpty="true" comment="" dataSrcType="FORMULA" dataType="LONGDURATION" decimals="2" formula="" internalDefValueStr="" internalMaxValue="INF" internalMinValue="-INF" maxStrLen="100" nameLong="TimeOfNextRedSignal" nameShort="NextRedTime" no="12" objType="SIGNALGROUP" subAttrs=""/>
+		<userDefinedAttribute canBeEmpty="false" comment="Calculated by optimization algorithm" dataSrcType="DATA" dataType="TEXT" decimals="2" formula="" internalDefValueStr="" internalMaxValue="INF" internalMinValue="-INF" maxStrLen="255" nameLong="PreSpeedProfile" nameShort="PreSpeedProfile" no="13" objType="VEHICLE" subAttrs=""/>
+		<userDefinedAttribute canBeEmpty="false" comment="Supplementary for &quot;PreSpeedProfile&quot; in case the lenght of &quot;PreSpeedProfile&quot; exceeds its max length." dataSrcType="DATA" dataType="TEXT" decimals="2" formula="" internalDefValueStr="" internalMaxValue="INF" internalMinValue="-INF" maxStrLen="255" nameLong="PreSpeedProfile_sup" nameShort="PreSpeedProfile_sup" no="14" objType="VEHICLE" subAttrs=""/>
 	</userDefinedAttributes>
 	<vehicleAttributeDecisions>
 		<vehicleAttributeDecision allVehTypes="true" attr="SPEED" decTyp="VALUE" lane="10012 1" name="Standarize speed" no="1" pos="16.172131623567168" timeFrom="0" timeTo="99999" value="50"/>

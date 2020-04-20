@@ -3,17 +3,17 @@
 	<currentWindowLayouts>
 		<windowLayoutCurrent no="1">
 			<dockAreaPanes>
-				<dockableAreaPane childPaneStyle="1" dockedLocation="1" floating="false" floatingLocationX="-1" floatingLocationY="-1" keyText="" no="1" paneType="AREA" sizeHeight="675" sizeWidth="233" tag="" text="" textTabResolved="" visible="true">
+				<dockableAreaPane childPaneStyle="1" dockedLocation="1" floating="false" floatingLocationX="-1" floatingLocationY="-1" keyText="" no="1" paneType="AREA" sizeHeight="675" sizeWidth="231" tag="" text="" textTabResolved="" visible="true">
 					<dockChildPanes>
-						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="true" isSelectedTab="true" keyText="Network Objects1" no="1" paneLayoutNo="0" paneType="CONTROL" pinned="true" sizeHeight="454" sizeWidth="233" subType="" tag="" text="Network Objects" textTabResolved="Network Objects" type="PTV.Vision.Controls.MainWindowNetObjSelectionControl, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
-						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="true" isSelectedTab="false" keyText="Project Explorer1" no="2" paneLayoutNo="0" paneType="CONTROL" pinned="true" sizeHeight="143" sizeWidth="233" subType="" tag="" text="Project Explorer" textTabResolved="Project Explorer" type="PTV.Vision.Controls.ScenarioManagementProjectExplorerControl, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
-						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="true" isSelectedTab="false" keyText="Schnellansicht1" no="3" paneLayoutNo="0" paneType="CONTROL" pinned="true" sizeHeight="74" sizeWidth="233" subType="" tag="" text="Quick View" textTabResolved="Quick View" type="PTV.Vision.Controls.ObjectPropertiesWindow, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
+						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="true" isSelectedTab="true" keyText="Network Objects1" no="1" paneLayoutNo="0" paneType="CONTROL" pinned="true" sizeHeight="454" sizeWidth="231" subType="" tag="" text="Network Objects" textTabResolved="Network Objects" type="PTV.Vision.Controls.MainWindowNetObjSelectionControl, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
+						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="true" isSelectedTab="false" keyText="Project Explorer1" no="2" paneLayoutNo="0" paneType="CONTROL" pinned="true" sizeHeight="143" sizeWidth="231" subType="" tag="" text="Project Explorer" textTabResolved="Project Explorer" type="PTV.Vision.Controls.ScenarioManagementProjectExplorerControl, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
+						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="true" isSelectedTab="false" keyText="Schnellansicht1" no="3" paneLayoutNo="0" paneType="CONTROL" pinned="true" sizeHeight="74" sizeWidth="231" subType="" tag="" text="Quick View" textTabResolved="Quick View" type="PTV.Vision.Controls.ObjectPropertiesWindow, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
 					</dockChildPanes>
 				</dockableAreaPane>
-				<dockableAreaPane childPaneStyle="1" dockedLocation="4" floating="false" floatingLocationX="-1" floatingLocationY="-1" keyText="" no="2" paneType="AREA" sizeHeight="675" sizeWidth="1045" tag="" text="" textTabResolved="" visible="true">
+				<dockableAreaPane childPaneStyle="1" dockedLocation="4" floating="false" floatingLocationX="-1" floatingLocationY="-1" keyText="" no="2" paneType="AREA" sizeHeight="675" sizeWidth="1047" tag="" text="" textTabResolved="" visible="true">
 					<dockChildPanes>
-						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="true" isSelectedTab="true" keyText="" no="1" paneLayoutNo="4" paneType="CONTROL" pinned="true" sizeHeight="369" sizeWidth="1045" subType="" tag="" text="Network Editor" textTabResolved="Network Editor" type="PTV.Vision.Controls.NetEditorControl, ControlUtils, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
-						<dockableChildPane childPaneStyle="2" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="true" isSelectedTab="false" keyText="" no="2" paneLayoutNo="0" paneType="GROUP" pinned="false" sizeHeight="304" sizeWidth="1045" subType="" tag="" text="" textTabResolved="" type="" visible="true">
+						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="true" isSelectedTab="false" keyText="" no="1" paneLayoutNo="4" paneType="CONTROL" pinned="true" sizeHeight="360" sizeWidth="1047" subType="" tag="" text="Network Editor" textTabResolved="Network Editor" type="PTV.Vision.Controls.NetEditorControl, ControlUtils, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
+						<dockableChildPane childPaneStyle="2" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="true" isSelectedTab="false" keyText="" no="2" paneLayoutNo="0" paneType="GROUP" pinned="false" sizeHeight="313" sizeWidth="1047" subType="" tag="" text="" textTabResolved="" type="" visible="true">
 							<dockableChildPanes>
 								<objectRef key="1 2 3"/>
 								<objectRef key="1 2 4"/>
@@ -32,12 +32,12 @@
 								<objectRef key="1 2 17"/>
 							</dockableChildPanes>
 						</dockableChildPane>
-						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="false" isSelectedTab="false" keyText="Vehicles In Network1" no="3" paneLayoutNo="18" paneType="CONTROL" pinned="true" sizeHeight="284" sizeWidth="1045" subType="Parent VEHICLE" tag="" text="Vehicles In Network" textTabResolved="Vehicles In Network" type="PTV.Vision.Controls.CoupledListWindow, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
-						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="false" isSelectedTab="false" keyText="Signal Controllers1" no="4" paneLayoutNo="24" paneType="CONTROL" pinned="true" sizeHeight="284" sizeWidth="1045" subType="Parent SIGNALCONTROLLER" tag="" text="Signal Controllers / Signal Groups" textTabResolved="Signal Controllers / Signal Groups" type="PTV.Vision.Controls.CoupledListWindow, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
-						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="false" isSelectedTab="false" keyText="Scripts1" no="5" paneLayoutNo="19" paneType="CONTROL" pinned="true" sizeHeight="284" sizeWidth="1045" subType="Parent SCRIPT" tag="" text="Scripts" textTabResolved="Scripts" type="PTV.Vision.Controls.CoupledListWindow, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
-						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="false" isSelectedTab="false" keyText="User-Defined Attributes1" no="6" paneLayoutNo="20" paneType="CONTROL" pinned="true" sizeHeight="284" sizeWidth="1045" subType="Parent USERDEFINEDATTRIBUTE" tag="" text="User-Defined Attributes" textTabResolved="User-Defined Attributes" type="PTV.Vision.Controls.CoupledListWindow, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
-						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="false" isSelectedTab="false" keyText="Signal Heads1" no="7" paneLayoutNo="26" paneType="CONTROL" pinned="true" sizeHeight="284" sizeWidth="1045" subType="Parent SIGNALHEAD" tag="" text="Signal Heads" textTabResolved="Signal Heads" type="PTV.Vision.Controls.CoupledListWindow, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
-						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="false" isSelectedTab="true" keyText="Vehicle Inputs1" no="8" paneLayoutNo="27" paneType="CONTROL" pinned="true" sizeHeight="284" sizeWidth="1045" subType="Parent VEHICLEINPUT" tag="" text="Vehicle Inputs / Vehicle Volumes By Time Interval" textTabResolved="Vehicle Inputs / Vehicle Volumes By Time Interval" type="PTV.Vision.Controls.CoupledListWindow, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
+						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="false" isSelectedTab="true" keyText="Vehicles In Network1" no="3" paneLayoutNo="18" paneType="CONTROL" pinned="true" sizeHeight="294" sizeWidth="1047" subType="Parent VEHICLE" tag="" text="Vehicles In Network" textTabResolved="Vehicles In Network" type="PTV.Vision.Controls.CoupledListWindow, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
+						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="false" isSelectedTab="false" keyText="Signal Controllers1" no="4" paneLayoutNo="24" paneType="CONTROL" pinned="true" sizeHeight="284" sizeWidth="1047" subType="Parent SIGNALCONTROLLER" tag="" text="Signal Controllers / Signal Groups" textTabResolved="Signal Controllers / Signal Groups" type="PTV.Vision.Controls.CoupledListWindow, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
+						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="false" isSelectedTab="false" keyText="Scripts1" no="5" paneLayoutNo="19" paneType="CONTROL" pinned="true" sizeHeight="294" sizeWidth="1047" subType="Parent SCRIPT" tag="" text="Scripts" textTabResolved="Scripts" type="PTV.Vision.Controls.CoupledListWindow, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
+						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="false" isSelectedTab="false" keyText="User-Defined Attributes1" no="6" paneLayoutNo="20" paneType="CONTROL" pinned="true" sizeHeight="294" sizeWidth="1047" subType="Parent USERDEFINEDATTRIBUTE" tag="" text="User-Defined Attributes" textTabResolved="User-Defined Attributes" type="PTV.Vision.Controls.CoupledListWindow, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
+						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="false" isSelectedTab="false" keyText="Signal Heads1" no="7" paneLayoutNo="26" paneType="CONTROL" pinned="true" sizeHeight="0" sizeWidth="0" subType="Parent SIGNALHEAD" tag="" text="Signal Heads" textTabResolved="Signal Heads" type="PTV.Vision.Controls.CoupledListWindow, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
+						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="false" isSelectedTab="false" keyText="Vehicle Inputs1" no="8" paneLayoutNo="27" paneType="CONTROL" pinned="true" sizeHeight="294" sizeWidth="1047" subType="Parent VEHICLEINPUT" tag="" text="Vehicle Inputs / Vehicle Volumes By Time Interval" textTabResolved="Vehicle Inputs / Vehicle Volumes By Time Interval" type="PTV.Vision.Controls.CoupledListWindow, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
 						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="false" isSelectedTab="false" keyText="Driving Behaviors1" no="9" paneLayoutNo="30" paneType="CONTROL" pinned="true" sizeHeight="0" sizeWidth="0" subType="Parent DRIVINGBEHAVIOR" tag="" text="Driving Behaviors" textTabResolved="Driving Behaviors" type="PTV.Vision.Controls.CoupledListWindow, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
 						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="false" isSelectedTab="false" keyText="Link Behavior Types1" no="10" paneLayoutNo="37" paneType="CONTROL" pinned="true" sizeHeight="0" sizeWidth="0" subType="Parent LINKBEHAVIORTYPE" tag="" text="Link Behavior Types / Driving Behaviors By Vehicle Class" textTabResolved="Link Behavior Types / Driving Behaviors By Vehicle Class" type="PTV.Vision.Controls.CoupledListWindow, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
 						<dockableChildPane childPaneStyle="0" flyoutSizeHeight="0" flyoutSizeWidth="0" isDirectAreaChild="false" isSelectedTab="false" keyText="Vehicle Compositions1" no="11" paneLayoutNo="38" paneType="CONTROL" pinned="true" sizeHeight="0" sizeWidth="0" subType="Parent VEHICLECOMPOSITION" tag="" text="Vehicle Compositions / Relative Flows" textTabResolved="Vehicle Compositions / Relative Flows" type="PTV.Vision.Controls.CoupledListWindow, Controls, Version=11.0.13.0, Culture=neutral, PublicKeyToken=null" visible="true"/>
@@ -224,6 +224,16 @@
 							<filterCriterionPreciseDurationInSeconds active="false" criterionType="EQUALS" filterValue="0" filterValueAdditional="0" filterValueTopBottom="1"/>
 						</filter>
 					</attributeListLayoutParameters>
+					<attributeListLayoutParameters alignment="LEFT" attributeID="PRESPEEDPROFILE" columnWidth="105" decimals="0" format="DEFAULT" quickViewRowHeight="0" showUnits="false">
+						<filter>
+							<filterCriterionString active="false" criterionType="EQUALS" filterValue=""/>
+						</filter>
+					</attributeListLayoutParameters>
+					<attributeListLayoutParameters alignment="LEFT" attributeID="PRESPEEDPROFILE_SUP" columnWidth="100" decimals="0" format="DEFAULT" quickViewRowHeight="0" showUnits="false">
+						<filter>
+							<filterCriterionString active="false" criterionType="EQUALS" filterValue=""/>
+						</filter>
+					</attributeListLayoutParameters>
 				</attributeLPars>
 			</netObjectLParSet>
 		</listLayout>
@@ -339,7 +349,7 @@
 				</attributeLPars>
 			</netObjectLParSet>
 		</listLayout>
-		<listLayout childRelation="SGS" exportListWhenSimulationFinished="false" name="" no="24" synchronization="false" verticalSplitterPosition="0.4354066985645933">
+		<listLayout childRelation="SGS" exportListWhenSimulationFinished="false" name="" no="24" synchronization="false" verticalSplitterPosition="0.43457497612225404">
 			<childNetObjectLParSet filtered="false" headerHeight="21" netObjectTypeID="SIGNALGROUP" rowHeaderWidth="57" rowHeight="0" showSimulationRunAggregates="true" showTimeIntervalAggregates="false">
 				<attributeLPars>
 					<attributeListLayoutParameters alignment="RIGHT" attributeID="NO" columnWidth="26" decimals="0" format="DEFAULT" quickViewRowHeight="0" showUnits="false">
@@ -465,7 +475,7 @@
 				</attributeLPars>
 			</netObjectLParSet>
 		</listLayout>
-		<listLayout childRelation="TIMEINTVEHVOLS" exportListWhenSimulationFinished="false" name="" no="27" synchronization="true" verticalSplitterPosition="0.45454545454545453">
+		<listLayout childRelation="TIMEINTVEHVOLS" exportListWhenSimulationFinished="false" name="" no="27" synchronization="true" verticalSplitterPosition="0.45367717287488063">
 			<childNetObjectLParSet filtered="false" headerHeight="21" netObjectTypeID="TIMEINTERVALVEHVOLUME" rowHeaderWidth="57" rowHeight="0" showSimulationRunAggregates="true" showTimeIntervalAggregates="false">
 				<attributeLPars>
 					<attributeListLayoutParameters alignment="CENTER" attributeID="CONT" columnWidth="36" decimals="0" format="DEFAULT" quickViewRowHeight="0" showUnits="false">
@@ -1030,7 +1040,7 @@
 			</selectableTypes>
 		</networkEditorLayout>
 		<networkEditorLayout name="" no="4" synchronization="NONE">
-			<camera coord2DX="193.18281421725476" coord2DY="-23.002227395192577" coord3DX="240.32117044854252" coord3DY="114.9673661541345" coord3DZ="54.035261189123943" foV="45" lookAtPt3DX="240.76018022742178" lookAtPt3DY="114.14114117483943" lookAtPt3DZ="53.682241787904616" rollAngle="0" zoom2D="1.4207916760228798"/>
+			<camera coord2DX="220.66804398983058" coord2DY="-20.398996646712963" coord3DX="240.32117044854252" coord3DY="114.9673661541345" coord3DZ="54.035261189123943" foV="45" lookAtPt3DX="240.76018022742178" lookAtPt3DY="114.14114117483943" lookAtPt3DZ="53.682241787904616" rollAngle="0" zoom2D="1.136633340818304"/>
 			<gParSet>
 				<backgroundGPars borderColor="ff000000" borderLineStyle="NOLINE" labelAttribute="NO" labelBackgrColor="00000000" labelColor="ff000000" labelDecimals="3" labelFontSize="3" labelVisibility="false" legdInclLabColor="false" objectVisibility="true" useLabelColorScheme="false"/>
 				<baseGPars autoLvlTransp="true" backgroundColor="ffc0c0c0" compassPos="BOTTOMRIGHT" legdOffset="10 10" legdPos="BOTTOMRIGHT" legdScale="1" logoFilename="" logoOffset="20 20" logoPos="TOPLEFT" mapGrayScale="false" mapIntensity="100" mapType="DEFAULTMAPPROVIDER" mode3D="false" rubberbandColor="fff0f000" selectionColor="fff0f000" showCompass="false" showGrid="true" showLegd="false" showLogo="false" showMap="false" showScale="true" showSimTmLabel="false" simTmLabelColor="ff000000" simTmLabelFontSize="20" simTmLabelOffset="15 30" simTmLabelPos="BOTTOMLEFT" wireframeMode="false">
