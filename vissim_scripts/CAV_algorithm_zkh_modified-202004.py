@@ -50,11 +50,12 @@ def GetVissimDataVehicles():
     global vehsAttNames
     vehsAttributesNames = ['No', 'VehType\\No', 'Lane\\Link\\No', 'DesSpeed',
                             'OrgDesSpeed', 'DistanceToSigHead', 'SpeedMaxForGreenStart', 
-                            'SpeedMinForGreenEnd', 'Speed', 'Acceleration', 'StartTM', 'SimSec', 'Pos']
+                            'SpeedMinForGreenEnd', 'Speed', 'Acceleration', 'StartTM', 'SimSec', 'Pos', 
+                            'PreSpeedProfile', 'PreSpeedProfile_sup']
     vehsAttributes = toList(Vissim.Net.Vehicles.GetMultipleAttributes(vehsAttributesNames))
-
+    #
     # 'vehsAttNames' is a dictionary for the attribute names read from PTV Vissim:
-    
+    #
     cnt = 0
     for att in vehsAttributesNames:
         vehsAttNames.update({att: cnt})
@@ -91,7 +92,7 @@ def OptimalSpeedMax(SpeedMaxForGreenStart, OrgDesSpeed):
     return optimalSpeed
 
 
-def SpeedAdjustment(SpeedMinForGreenEnd, SpeedMaxForGreenStart, OrgDesSpeed, diffSpeed):
+def SpeedAdvisory(SpeedMinForGreenEnd, SpeedMaxForGreenStart, OrgDesSpeed, diffSpeed):
     if SpeedMinForGreenEnd > SpeedMaxForGreenStart:
         # The minimum speed for arriving before the next green end is higher than the maximum speed to arriving after the next green start. This is only possible in case the next signal is green.
         # > there is green ahead!
@@ -165,13 +166,14 @@ def read_sol(filename, n):
     
     return np.array(x).astype(float), np.array(v).astype(float) ############### different from original script
 
-
+'''
 def write_speed_profile(speed_set, No):
     profile_file = open(r'C:\Users\Kaihang Zhang\Desktop\Vissim_Projects\Intersection\total_speed_profile.csv', 'a')
     profile_file.write(str(No) + ',')
     profile_file.write(','.join([str(i) for i in speed_set.tolist()]) + ',\n')
     profile_file.close()
     log_in_file('written success of # '+str(No))
+
 
 
 def read_speed_profile(No):
@@ -184,6 +186,18 @@ def read_speed_profile(No):
     except Exception as e:
         log_in_file(str(e) + ' read failed of #%i'%No)
         return None
+'''
+
+
+def write_speed_profile(v_profile, No):
+    return None
+
+
+def process_speed_profile(PreSpeedProfile):
+    PreSpeedProfile = PreSpeedProfile.split(',')
+    for i in range(len(PreSpeedProfile)):
+        PreSpeedProfile[i] = float(PreSpeedProfile[i])
+    return PreSpeedProfile
 
 
 def write_pos_profile(pos_set, No):
@@ -252,19 +266,28 @@ def Cal_LP(No, n, t_set, aL, aU, vf, L, v_tf):
 
     [x_res, v_profile] = read_sol('_save.sol', n) ############### different from original script
 
+    '''
     if int(No) == 1:
         dif = 60-len(v_profile)
         nan_set = np.ones(dif)
         v_profile = np.append(v_profile, nan_set)
         ##log_in_file(v_profile)
+    '''
 
-    write_speed_profile(v_profile, No)
-    write_pos_profile(x_res, No)
+
+    for vehAttributes in vehsAttributes:
+        if vehAttributes[vehsAttNames['No']] == No:
+            #log_in_file(','.join([str('%.2f'%i) for i in v_profile]))
+            vehAttributes[vehsAttNames['PreSpeedProfile']] = ','.join([str('%.2f'%i) for i in v_profile])
+
+
+    # write_speed_profile(v_profile, No)
+    # write_pos_profile(x_res, No)
 
     return x_res, v_profile
 
 
-def Linear_Optimize(StartTM, SimSec, Time_Simulated, DistanceToSigHead, L, aL, aU, v_tf, vf, v_0, TimeUntilNextGreen, simulation_time_step, No):
+def Linear_Optimize(StartTM, SimSec, Time_Simulated, DistanceToSigHead, L, aL, aU, v_tf, vf, v_0, TimeUntilNextGreen, simulation_time_step, No, PreSpeedProfile):
     # ---------------------------------------
     #  Decide about the optimal speed (desired speed)      |
     # ---------------------------------------
@@ -283,6 +306,8 @@ def Linear_Optimize(StartTM, SimSec, Time_Simulated, DistanceToSigHead, L, aL, a
     # n need to be discussed
     n = int(TimeUntilNextGreen/simulation_time_step) 
     t_set = np.ones(n)*(TimeUntilNextGreen-0)/n  # t_final - t_0
+
+    '''
     try:
         profile_file = open(r'C:\Users\Kaihang Zhang\Desktop\Vissim_Projects\Intersection\total_speed_profile.csv')
         speed_profile = profile_file.readlines()
@@ -292,14 +317,15 @@ def Linear_Optimize(StartTM, SimSec, Time_Simulated, DistanceToSigHead, L, aL, a
     except Exception as e: # No==1
         if_gen = 1
         log_in_file('No is %i'%No + str(e))
+    '''
+    
+    log_in_file('line 322, %i'%len(PreSpeedProfile))
     
 
-    if  if_gen == 1:
-
-        Cal_LP(No, n, t_set, aL, aU, vf, L, v_tf)
-        
-
-    v_profile = read_speed_profile(No)
+    if  len(PreSpeedProfile) == 0:
+        [x_profile, v_profile] = Cal_LP(No, n, t_set, aL, aU, vf, L, v_tf)
+    else:
+        v_profile = process_speed_profile(PreSpeedProfile)
 
     ##log_in_file(v_profile)
 
@@ -363,6 +389,9 @@ def V2I():
             if vehAttributes[vehsAttNames['VehType\\No']] in vehTypesEquipped:
                 # set easier variables of the current vehicle:
                 No = vehAttributes[vehsAttNames['No']]
+
+                PreSpeedProfile = vehAttributes[vehsAttNames['PreSpeedProfile']]
+
                 DesSpeed = vehAttributes[vehsAttNames['DesSpeed']]/3.6
                 
                 OrgDesSpeed = vehAttributes[vehsAttNames['OrgDesSpeed']]
@@ -429,11 +458,11 @@ def V2I():
 
                 try:
                     Time_Simulated = SimSec - StartTM
-                    optimalSpeed = Linear_Optimize(StartTM, SimSec, Time_Simulated, DistanceToSigHead, L, aL, aU, v_tf, vf, v_0, TimeUntilNextGreen, simulation_time_step, No)
+                    optimalSpeed = Linear_Optimize(StartTM, SimSec, Time_Simulated, DistanceToSigHead, L, aL, aU, v_tf, vf, v_0, TimeUntilNextGreen, simulation_time_step, No, PreSpeedProfile)
                     log_in_file('optimalSpeed is %f'%optimalSpeed)
                     if np.isnan(optimalSpeed) or optimalSpeed > 13.9:
-                        optimalSpeed = SpeedAdjustment(SpeedMinForGreenEnd, SpeedMaxForGreenStart, OrgDesSpeed, diffSpeed)
-                        log_in_file('SpeedAdjustment used at time %f'%SimSec)
+                        optimalSpeed = SpeedAdvisory(SpeedMinForGreenEnd, SpeedMaxForGreenStart, OrgDesSpeed, diffSpeed)
+                        log_in_file('SpeedAdvisory used at time %f'%SimSec)
                         #optimalSpeed = v_tf
                     #optimalSpeed = max(optimalSpeed, 4)  # minimum speed is 4
                     optimalSpeed = min(optimalSpeed, OrgDesSpeed)
@@ -447,7 +476,10 @@ def V2I():
         # ----------------------------------------------------------------------------
         vehicleNumDesiredSpeeds = [[x[vehsAttNames['DesSpeed']], x[vehsAttNames['OrgDesSpeed']]] for x in vehsAttributes]
         try:
-            Vissim.Net.Vehicles.SetMultipleAttributes(('DesSpeed', 'OrgDesSpeed'), vehicleNumDesiredSpeeds)
+            Vissim.Net.Vehicles.SetMultipleAttributes(['DesSpeed', 'OrgDesSpeed'], vehicleNumDesiredSpeeds)
+            log_in_file('suscess1')
+            
+            Vissim.Net.Vehicles.SetMultipleAttributes(['PreSpeedProfile'], [[x[vehsAttNames['PreSpeedProfile']]] for x in vehsAttributes])
+            log_in_file('suscess2')
         except Exception as e:
             log_in_file(str(e))
-        
