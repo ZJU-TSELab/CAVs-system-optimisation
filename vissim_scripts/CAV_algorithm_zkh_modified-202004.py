@@ -51,7 +51,7 @@ def GetVissimDataVehicles():
     vehsAttributesNames = ['No', 'VehType\\No', 'Lane\\Link\\No', 'DesSpeed',
                             'OrgDesSpeed', 'DistanceToSigHead', 'SpeedMaxForGreenStart', 
                             'SpeedMinForGreenEnd', 'Speed', 'Acceleration', 'StartTM', 'SimSec', 'Pos', 
-                            'PreSpeedProfile', 'PreSpeedProfile_sup']
+                            'PreSpeedProfile', 'PreSpeedProfile_sup', 'PrePosProfile', 'ifLeadingVeh', 'VehiclesAhead']
     vehsAttributes = toList(Vissim.Net.Vehicles.GetMultipleAttributes(vehsAttributesNames))
     #
     # 'vehsAttNames' is a dictionary for the attribute names read from PTV Vissim:
@@ -173,16 +173,12 @@ def write_speed_profile(speed_set, No):
     profile_file.write(','.join([str(i) for i in speed_set.tolist()]) + ',\n')
     profile_file.close()
     log_in_file('written success of # '+str(No))
-
-
-
 def read_speed_profile(No):
     speed_profile = pd.read_csv(r'C:\Users\Kaihang Zhang\Desktop\Vissim_Projects\Intersection\total_speed_profile.csv', header=None)
     try: 
         speed_profileNo = speed_profile[speed_profile[0]==No].values.tolist()
         
         return speed_profileNo[0]
-
     except Exception as e:
         log_in_file(str(e) + ' read failed of #%i'%No)
         return None
@@ -475,11 +471,19 @@ def V2I():
         #  After iterating though all vehicles, update the speeds in PTV Vissim     |
         # ----------------------------------------------------------------------------
         vehicleNumDesiredSpeeds = [[x[vehsAttNames['DesSpeed']], x[vehsAttNames['OrgDesSpeed']]] for x in vehsAttributes]
+
         try:
             Vissim.Net.Vehicles.SetMultipleAttributes(['DesSpeed', 'OrgDesSpeed'], vehicleNumDesiredSpeeds)
-            log_in_file('suscess1')
-            
             Vissim.Net.Vehicles.SetMultipleAttributes(['PreSpeedProfile'], [[x[vehsAttNames['PreSpeedProfile']]] for x in vehsAttributes])
-            log_in_file('suscess2')
+            Vissim.Net.Vehicles.SetMultipleAttributes(['PrePosProfile'], [[x[vehsAttNames['PrePosProfile']]] for x in vehsAttributes])
+            # calculate how many vehicles are ahead of each vehicle
+            # j means how many cars are there on the straight lane
+            j = np.sum(np.array(Vissim.Net.Vehicles.GetMultipleAttributes(['Lane\Link\No']))==5)\
+                +np.sum(np.array(Vissim.Net.Vehicles.GetMultipleAttributes(['Lane\Link\No']))==9)\
+                +np.sum(np.array(Vissim.Net.Vehicles.GetMultipleAttributes(['Lane\Link\No']))==10016)\
+                +np.sum(np.array(Vissim.Net.Vehicles.GetMultipleAttributes(['Lane\Link\No']))==10012)
+            VehiclesAhead_Set = [[0] for i in range(len(vehsAttributes) - j)]
+            VehiclesAhead_Set.extend([[i] for i in range(j)])
+            Vissim.Net.Vehicles.SetMultipleAttributes(['VehiclesAhead'], VehiclesAhead_Set)
         except Exception as e:
             log_in_file(str(e))
