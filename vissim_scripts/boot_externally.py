@@ -34,7 +34,7 @@ def run(ScriptFiles, Volume, VehComp, Random_Seed, SimPeriod, period):
 
 
 def get_No():
-    dir = r'C:\Users\Kaihang Zhang\Desktop\Vissim_Projects\Intersection\Results\\'
+    dir = r'C:\Users\Kaihang Zhang\Desktop\Vissim_Projects\Intersection\sResults\\'
     No = []
     for root, dirs, files in os.walk(dir):
         for file in files:
@@ -45,8 +45,8 @@ def get_No():
 
 SimPeriod = 900 # seconds
 Simulation_Steps = [1.0]  # second, time interval to update the desired speed.
-Volumes = [600, 900, 1200]
-Random_Seeds = [42,142,242,342,442,542,642,742,842,942]
+Volumes = [300, 600, 900]
+Random_Seeds = [42,142,242]
 
 ScriptFiles1 = [[ScriptFile_KZ], [ScriptFile_KZ], [ReadOutputFile]]
 ScriptFiles2 = [[ScriptFile_SH], [ScriptFile_SH], [ReadOutputFile]]
